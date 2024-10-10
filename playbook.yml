@@ -1,0 +1,42 @@
+- name: Check installed packages
+  hosts: all
+  tasks:
+    - name: Check for FISH
+      debug:
+        msg: "FISH found"
+      when: "'fish' in ansible_facts.packages"
+
+    - name: Check for FISH
+      debug:
+        msg: "FISH NOT found"
+      when: "'fish' not in ansible_facts.packages"
+
+    - name: Check for TMUX
+      debug:
+        msg: "TMUX found"
+      when: "'tmux' in ansible_facts.packages"
+
+    - name: Check for TMUX
+      debug:
+        msg: "TMUX NOT found"
+      when: "'tmux' not in ansible_facts.packages"
+
+    - name: Check for MC
+      debug:
+        msg: "MC found"
+      when: "'mc' in ansible_facts.packages"
+
+    - name: Check for MC
+      debug:
+        msg: "MC NOT found"
+      when: "'mc' not in ansible_facts.packages"
+
+    - name: Check for GIT
+      debug:
+        msg: "GIT found"
+      when: "'git' in ansible_facts.packages"
+
+    - name: Check for GIT
+      debug:
+        msg: "GIT NOT found"
+      when: "'git' not in ansible_facts.packages"
